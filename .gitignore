@@ -1,0 +1,5 @@
+src/__pycache__/SeleniumExtended.cpython-39.pyc
+src/locators/__pycache__/MyAccountSignedInLocators.cpython-39.pyc
+src/pages/__pycache__/MyAccountSignedIn.cpython-39.pyc
+tests/my_account/__pycache__/test_register_new_user.cpython-39-pytest-7.2.0.pyc
+src/__pycache__/SeleniumExtended.cpython-39.pyc
