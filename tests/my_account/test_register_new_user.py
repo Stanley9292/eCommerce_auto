@@ -21,4 +21,4 @@ class TestRegisterNewUser:
 
         myAccountSignedIn.verify_user_is_signed_in()
 
-        # import pdb; pdb.set_trace()
+        import pdb; pdb.set_trace()
