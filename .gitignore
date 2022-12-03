@@ -3,3 +3,9 @@ src/locators/__pycache__/MyAccountSignedInLocators.cpython-39.pyc
 src/pages/__pycache__/MyAccountSignedIn.cpython-39.pyc
 tests/my_account/__pycache__/test_register_new_user.cpython-39-pytest-7.2.0.pyc
 src/__pycache__/SeleniumExtended.cpython-39.pyc
+src/__pycache__/SeleniumExtended.cpython-39.pyc
+src/locators/__pycache__/CartPageLocator.cpython-39.pyc
+src/locators/__pycache__/HomePageLocator.cpython-39.pyc
+src/pages/__pycache__/CartPage.cpython-39.pyc
+src/pages/__pycache__/HomePage.cpython-39.pyc
+tests/my_account/__pycache__/test_e2e.cpython-39-pytest-7.2.0.pyc

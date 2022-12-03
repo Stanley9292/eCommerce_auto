@@ -17,3 +17,9 @@ class HomePage(HomePageLocator):
         my_account_url = base_url
         logger.info(f'Going to: {my_account_url}')
         self.driver.get(my_account_url)
+
+    def add_fourth_item_to_cart(self):
+        self.seleniumExtended.wait_and_click(self.fourthItemAddToCartBtn)
+
+    def add_first_item_to_cart(self):
+        self.seleniumExtended.wait_and_click(self.allItemsAddToCartBtns)

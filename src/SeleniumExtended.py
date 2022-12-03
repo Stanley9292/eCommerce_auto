@@ -22,7 +22,7 @@ class SeleniumExtended:
     def wait_until_element_contains_text(self, locator, text, timeout=None):
         timeout = timeout if timeout else self.default_timeout
         WebDriverWait(self.driver, timeout).until(
-            EC.text_to_be_present_in_element(locator, text))
+        EC.text_to_be_present_in_element(locator, text))
     
     def wait_until_element_is_visible(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout

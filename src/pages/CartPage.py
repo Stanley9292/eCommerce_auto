@@ -14,6 +14,3 @@ class CartPage(CartPageLocator):
         my_account_url = base_url
         logger.info(f'Going to: {my_account_url}')
         self.driver.get(my_account_url)
-
-    def add_item_to_cart(self):
-        self.seleniumExtended.wait_and_click(self.fourthItemAddToCartBtn)

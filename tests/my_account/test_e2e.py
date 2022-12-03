@@ -36,7 +36,6 @@ class TestRegisterNewUser:
         myAccountSignedOut.click_register_button()
 
         homePage.go_to_homepage()
-        import pdb; pdb.set_trace()
-        cartPage.add_item_to_cart()
+        homePage.add_first_item_to_cart()
 
         import pdb; pdb.set_trace()
