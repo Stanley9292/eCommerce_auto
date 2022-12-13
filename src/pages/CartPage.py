@@ -13,6 +13,16 @@ class CartPage(CartPageLocator):
 
     def get_all_product_names_in_cart(self):
         product_name_elements = self.seleniumExtended.wait_and_get_elements(self.allProductNamesText)
-        import pdb; pdb.set_trace()
         product_names = [i.text for i in product_name_elements]
         return product_names
+
+    def input_coupon(self, coupon_code):
+        self.seleniumExtended.wait_and_input_text(self.couponFieldInput, coupon_code)
+
+    def click_apply_coupon(self):
+        self.seleniumExtended.wait_and_click(self.applyCouponBtn)
+
+    def apply_coupon(self, coupon_code):
+        self.input_coupon(coupon_code)
+        self.click_apply_coupon()
+

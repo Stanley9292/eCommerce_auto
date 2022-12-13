@@ -35,11 +35,10 @@ class SeleniumExtended:
         err = err if err else f"Unable to find elements located by '{locator}'," \
                             f"after timeout {timeout}"
         try:
-            WebDriverWait(self.driver, timeout).until(
+            elements = WebDriverWait(self.driver, timeout).until(
                 EC.visibility_of_all_elements_located(locator)
             )
         except TimeoutException:
             raise TimeoutException(err)
-        # text = locator.text
-        # return text
+        return elements
         

@@ -8,6 +8,7 @@ from src.pages.HomePage import HomePage
 from src.pages.CartPage import CartPage
 from src.pages.Header import Header
 from src.helpers.general_helpers import generate_random_email_and_password
+from src.configs.generic_configs import GenericConfigs
 
 @pytest.mark.e2e
 class TestRegisterNewUser:
@@ -36,7 +37,11 @@ class TestRegisterNewUser:
 
         product_names = cartPage.get_all_product_names_in_cart()
 
-        assert len(product_names) == 1, f"Expected 1 item in cart but found {len(product_names)}"
+        assert len(product_names) == 2, f"Expected 2 item in cart but found {len(product_names)}"
+
+        # cartPage.input_coupon('1234')
+        # couponCode = 'ssqa100'
+        cartPage.apply_coupon(GenericConfigs.FREE_COUPON)
 
 
         import pdb; pdb.set_trace()
