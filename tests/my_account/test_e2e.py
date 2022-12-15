@@ -42,5 +42,7 @@ class TestRegisterNewUser:
         actual_message = cartPage.get_displayed_message()
         assert expected_message == actual_message , f"Unexpected message when applying coupon."
 
+        cartPage.click_checkout_button()
+
 
         import pdb; pdb.set_trace()

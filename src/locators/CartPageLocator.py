@@ -5,3 +5,4 @@ class CartPageLocator:
     couponFieldInput = (By.ID, 'coupon_code')
     applyCouponBtn = (By.CSS_SELECTOR, 'button[name="apply_coupon"]')
     couponMessageAlert = (By.CSS_SELECTOR, 'div.woocommerce-message')
+    checkoutBtn = (By.CSS_SELECTOR, 'div.wc-proceed-to-checkout')

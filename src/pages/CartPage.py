@@ -29,3 +29,6 @@ class CartPage(CartPageLocator):
     def get_displayed_message(self):
         text = self.seleniumExtended.wait_and_get_text(self.couponMessageAlert)
         return text
+
+    def click_checkout_button(self):
+        self.seleniumExtended.wait_and_click(self.checkoutBtn)
