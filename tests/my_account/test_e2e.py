@@ -17,7 +17,6 @@ class TestRegisterNewUser:
     def test_end_to_end_checkout_guest_user(self):
 
         myAccountSignedOut = MyAccountSignedOut(self.driver)
-        # myAccountSignedIn = MyAccountSignedIn(self.driver)
         homePage = HomePage(self.driver)
         cartPage = CartPage(self.driver)
         header = Header(self.driver)
