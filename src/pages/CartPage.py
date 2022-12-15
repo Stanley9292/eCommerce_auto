@@ -26,3 +26,6 @@ class CartPage(CartPageLocator):
         self.input_coupon(coupon_code)
         self.click_apply_coupon()
 
+    def get_displayed_message(self):
+        text = self.seleniumExtended.wait_and_get_text(self.couponMessageAlert)
+        return text

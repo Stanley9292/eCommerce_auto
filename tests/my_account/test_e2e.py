@@ -1,9 +1,7 @@
 
 
 import pytest
-import time
 from src.pages.MyAccountSignedOut import MyAccountSignedOut
-from src.pages.MyAccountSignedIn import MyAccountSignedIn
 from src.pages.HomePage import HomePage
 from src.pages.CartPage import CartPage
 from src.pages.Header import Header
@@ -38,9 +36,11 @@ class TestRegisterNewUser:
 
         assert len(product_names) == 2, f"Expected 2 item in cart but found {len(product_names)}"
 
-        # cartPage.input_coupon('1234')
-        # couponCode = 'ssqa100'
         cartPage.apply_coupon(GenericConfigs.FREE_COUPON)
+
+        expected_message = 'Coupon code applied successfully.'
+        actual_message = cartPage.get_displayed_message()
+        assert expected_message == actual_message , f"Unexpected message when applying coupon."
 
 
         import pdb; pdb.set_trace()
