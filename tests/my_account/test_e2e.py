@@ -5,6 +5,7 @@ from src.pages.MyAccountSignedOut import MyAccountSignedOut
 from src.pages.HomePage import HomePage
 from src.pages.CartPage import CartPage
 from src.pages.Header import Header
+from src.pages.CheckoutPage import CheckoutPage
 from src.helpers.general_helpers import generate_random_email_and_password
 from src.configs.generic_configs import GenericConfigs
 
@@ -18,6 +19,7 @@ class TestRegisterNewUser:
         homePage = HomePage(self.driver)
         cartPage = CartPage(self.driver)
         header = Header(self.driver)
+        checkoutPage = CheckoutPage(self.driver)
  
         myAccountSignedOut.go_to_my_account()
         random_email = generate_random_email_and_password()
@@ -43,6 +45,8 @@ class TestRegisterNewUser:
         assert expected_message == actual_message , f"Unexpected message when applying coupon."
 
         cartPage.click_checkout_button()
+
+        checkoutPage.fill_in_billing_info()
 
 
         import pdb; pdb.set_trace()
