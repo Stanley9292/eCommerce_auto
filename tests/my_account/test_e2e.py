@@ -54,4 +54,8 @@ class TestRegisterNewUser:
 
         orderReceivedPage.verify_order_received_page_loaded()
 
+        order_nr = orderReceivedPage.get_order_number()
+
+        print(order_nr)
+
         import pdb; pdb.set_trace()
