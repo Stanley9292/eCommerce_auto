@@ -47,6 +47,7 @@ class TestRegisterNewUser:
         cartPage.click_checkout_button()
 
         checkoutPage.fill_in_billing_info()
-
+        checkoutPage.click_local_pick_up()
+        checkoutPage.click_place_order()
 
         import pdb; pdb.set_trace()

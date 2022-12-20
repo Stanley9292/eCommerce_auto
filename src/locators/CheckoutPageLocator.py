@@ -10,3 +10,5 @@ class CheckoutPageLocator:
     zipCodeInput = (By.ID, 'billing_postcode')
     phoneInput = (By.ID, 'billing_phone')
     emailAddressInput = (By.ID, 'billing_email')
+    placeOrderBtn = (By.ID, 'place_order')
+    localPickUpRadioBtn = (By.ID, 'shipping_method_0_local_pickup3')

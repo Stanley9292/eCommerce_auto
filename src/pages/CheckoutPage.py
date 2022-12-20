@@ -42,6 +42,12 @@ class CheckoutPage(CheckoutPageLocator):
             email = rand_email['email'] 
         self.seleniumExtended.wait_and_input_text(self.emailAddressInput, email)
 
+    def click_place_order(self):
+        self.seleniumExtended.wait_and_click(self.placeOrderBtn)
+
+    def click_local_pick_up(self):
+        self.seleniumExtended.wait_and_click(self.localPickUpRadioBtn)
+
     def fill_in_billing_info(self, f_name=None, l_name=None, street1=None, street2=None, city=None, zipCode=None, phone=None, email = None):
         self.input_billing_first_name(first_name=f_name)
         self.input_billing_last_name(last_name=l_name)
@@ -50,4 +56,4 @@ class CheckoutPage(CheckoutPageLocator):
         self.input_billing_city(city=city)
         self.input_billing_zipCode(zipCode=zipCode)
         self.input_billing_phone(phone=phone)
-        self.input_billing_email(email=email)
+        # self.input_billing_email(email=email)
