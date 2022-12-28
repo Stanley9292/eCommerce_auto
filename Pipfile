@@ -15,6 +15,7 @@ pytz = "*"
 browserstack-local = "*"
 pytest-html = "*"
 pypdf2 = "*"
+pymysql = "*"
 
 [dev-packages]
 pylint = "*"
