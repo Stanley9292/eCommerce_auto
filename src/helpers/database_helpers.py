@@ -11,7 +11,6 @@ def read_from_db(sql):
         cursor.execute(sql)
         db_data = cursor.fetchall()
         cursor.close()
-        connection.close()
     finally:
         connection.close()
 
@@ -21,6 +20,6 @@ def read_from_db(sql):
 def get_order_from_db_by_order_nr(order_nr):
     sql = f"SELECT * FROM coolsite.wp_posts WHERE ID = {order_nr} AND post_type = 'shop_order';"
     db_order = read_from_db(sql)
-    print(db_order)
+    return db_order
 
-get_order_from_db_by_order_nr(65)
+# get_order_from_db_by_order_nr(77)
