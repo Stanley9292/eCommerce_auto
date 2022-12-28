@@ -12,8 +12,9 @@ def get_base_url():
 
 def get_database_credentials():
     env = os.environ.get('ENV', 'test')
-    db_user = os.environ.get("DB_USER")
-    db_password = os.environ.get("DB_PASSWORD")
+
+    db_user = os.environ.get("DB_USER", 'root')
+    db_password = os.environ.get("DB_PASSWORD", 'root')
 
     if not db_user or not db_password:
         raise Exception("Environemnt variables DB_USER and DB_PASSWORD must be set.")
