@@ -1,9 +1,11 @@
 import pymysql
+from src.helpers.config_helpers import get_database_credentials
 
 def read_from_db(sql):
     # connect to db
-    connection = pymysql.connect(host='127.0.0.1', port=8889,
-                                user='root', password='root')
+    db_credentials = get_database_credentials()
+    connection = pymysql.connect(host=db_credentials['db_host'], port=db_credentials['db_port'],
+                                user=db_credentials['db_user'], password=db_credentials['db_password'])
 
     # read from db
     try: 
