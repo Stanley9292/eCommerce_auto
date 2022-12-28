@@ -9,10 +9,7 @@
 
 1. Run "pipenv shell" to activate python VM. 
 2. Run all tests: "pytest -v -s"
-3. Run quickquotes tests: "pytest -rA -m test_QQ_UMB"
-4. On Windows server you must run like these: "python.exe -rA -m pytest -v -m detailedquote"
-5. You can run on multicore mode (multiple times) like these: "pytest -rA -n 3 -m quickquote"
-6. Run with a test report: pytest -rA -m test_QQ_DQ_Policy_XUM_HIC --html=report.html --self-contained-html
+3. pytest -m "negative" --html=my_report.html.
 
 ## Setup Allure Report tool (optional)
 
