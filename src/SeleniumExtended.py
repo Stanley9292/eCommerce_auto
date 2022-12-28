@@ -1,6 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+from selenium.common.exceptions import TimeoutException, StaleElementReferenceException, ElementClickInterceptedException
 import time
 
 class SeleniumExtended:
@@ -22,6 +22,11 @@ class SeleniumExtended:
                 EC.visibility_of_element_located(locator)
             ).click()
         except StaleElementReferenceException:
+            time.sleep(2)
+            WebDriverWait(self.driver, timeout).until(
+                EC.visibility_of_element_located(locator)
+            ).click()
+        except ElementClickInterceptedException:
             time.sleep(2)
             WebDriverWait(self.driver, timeout).until(
                 EC.visibility_of_element_located(locator)
