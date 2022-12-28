@@ -1,5 +1,6 @@
 import pymysql
 from src.helpers.config_helpers import get_database_credentials
+from src.configs.generic_configs import GenericConfigs
 
 def read_from_db(sql):
     # connect to db
@@ -20,7 +21,9 @@ def read_from_db(sql):
     return db_data
 
 def get_order_from_db_by_order_nr(order_nr):
-    sql = f"SELECT * FROM coolsite.wp_posts WHERE ID = {order_nr} AND post_type = 'shop_order';"
+    schema = GenericConfigs.DATABASE_SCHEMA
+    table_prefix = GenericConfigs.DATABASE_TABLE_PREFIX
+    sql = f"SELECT * FROM {schema}.{table_prefix}posts WHERE ID = {order_nr} AND post_type = 'shop_order';"
     db_order = read_from_db(sql)
     return db_order
 
