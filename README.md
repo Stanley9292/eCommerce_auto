@@ -9,13 +9,5 @@
 
 1. Run "pipenv shell" to activate python VM. 
 2. Run all tests: "pytest -v -s"
-3. pytest -m "negative" --html=my_report.html.
-
-## Setup Allure Report tool (optional)
-
-1. Run in Powershell: "Set-ExecutionPolicy RemoteSigned -scope CurrentUser"
-2. Run in Powershell: "iex (new-object net.webclient).downloadstring('https://get.scoop.sh')"
-3. Run in Powershell: "scoop install allure".
-4. Run in the root of the project: "allure serve .\reports\" to generate reports from reports directory.
-5. Run "pytest . --alluredir=reports; allure serve .\reports\" to generate a report for all ran tests.
-6. Remove everything from reports folder: "Get-ChildItem -Path C:\workspace\webportalautotesting\reports -Include * -File -Recurse | foreach { $_.Delete()}"
+3. Run with a report: pytest -m "negative" --html=my_report.html.
+4. Run in debug mode: pytest -m "negative" --pdb

@@ -1,4 +1,5 @@
 import pytest
+import os
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -21,7 +22,13 @@ def pytest_runtest_makereport(item, call):
         if (report.skipped and xfail) or (report.failed and not xfail):
             is_frontend_test = True if 'init_driver' in item.fixturenames else False
             if is_frontend_test:
-                extra.append(pytest_html.extras.url("http://www.example.com/"))
+                results_dir = os.environ.get("RESULTS_DIR", 'screenshots')
+                if not results_dir:
+                    raise Exception("Environment variable 'RESULTS_DIR' must be set.")
+                screenshot_name = os.path.join(results_dir, item.name + '.png')
+                driver_fixture = item.funcargs['request']
+                driver_fixture.cls.driver.save_screenshot(screenshot_name)
+                extra.append(pytest_html.extras.image(screenshot_name))
                 
         report.extra = extra
 
