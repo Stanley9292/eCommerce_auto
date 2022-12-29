@@ -70,4 +70,4 @@ class TestRegisterNewUser:
         db_order = get_order_from_db_by_order_nr(order_nr)
         assert db_order, f"Entry not found in DB for order {order_nr}." 
 
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
